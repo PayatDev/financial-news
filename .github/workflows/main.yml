@@ -1,0 +1,21 @@
+name: Daily Stock News
+
+on:
+  schedule:
+    - cron: '30 4 * * 1-5'  # 11:30 น. ICT จันทร์-ศุกร์
+  workflow_dispatch:  # รันมือได้
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests feedparser
+      - run: python main.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
