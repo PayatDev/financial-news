@@ -1,8 +1,10 @@
 name: Daily Stock News
 
-on:
+on:  
   schedule:
-    - cron: '43 5 * * 1-5'  # 11:30 น. ICT จันทร์-ศุกร์
+  # จันทร์–ศุกร์ เวลา 06:00 น. ประเทศไทย
+  # เท่ากับ 23:00 UTC ของวันอาทิตย์–พฤหัสบดี
+    - cron: "0 23 * * 0-4"
   workflow_dispatch:  # รันมือได้
 
 jobs:
