@@ -2,7 +2,7 @@ name: Daily Stock News
 
 on:
   schedule:
-    - cron: '30 4 * * 1-5'  # 11:30 น. ICT จันทร์-ศุกร์
+    - cron: '43 5 * * 1-5'  # 11:30 น. ICT จันทร์-ศุกร์
   workflow_dispatch:  # รันมือได้
 
 jobs:
