@@ -3,7 +3,7 @@ name: Daily Stock News
 on:
   schedule:
     # จันทร์–ศุกร์ เวลา 06:00 น. ประเทศไทย
-    # เท่ากับ 23:00 UTC ของวันอาทิตย์–พฤหัสบดี
+    # 23:00 UTC วันอาทิตย์–พฤหัสบดี
     - cron: "0 23 * * 0-4"
 
   workflow_dispatch:
